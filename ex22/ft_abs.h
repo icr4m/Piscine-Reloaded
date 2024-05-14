@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 17:50:16 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/14 10:28:15 by ijaber           ###   ########.fr       */
+/*   Created: 2024/05/14 09:21:22 by ijaber            #+#    #+#             */
+/*   Updated: 2024/05/14 09:39:10 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_ABS_H
+# define FT_ABS_H
 
-void	ft_putchar(char c);
+# define ABS(x) (x > 0 ? x : -x)
 
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		ft_putchar(str[i++]);
-}
-
-int	main(int ac, char **av)
-{
-	int	i;
-
-	i = 1;
-	while (i < ac)
-	{
-		ft_putstr(av[i]);
-		ft_putchar('\n');
-		i++;
-	}
-}
+#endif

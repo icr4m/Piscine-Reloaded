@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ijaber <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:09:35 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/13 15:12:49 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/14 09:18:38 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_div_mod(int a, int b, int *div, int *mod)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-    *div = a/b;
-    *mod = a % b;
+	*div = a / b;
+	*mod = a % b;
 }

@@ -3,32 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ijaber <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:10:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/13 18:11:39 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/14 09:19:11 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-    write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 		ft_putchar(str[i++]);
 }
 
-int		ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s1[i] && s2[i] && s1[i] == s2[i])
@@ -38,16 +35,16 @@ int		ft_strcmp(char *s1, char *s2)
 
 void	ft_swap(char **a, char **b)
 {
-	char *temp;
+	char	*temp;
 
 	temp = *a;
 	*a = *b;
 	*b = temp;
 }
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < ac - 1)

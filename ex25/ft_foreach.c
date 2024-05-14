@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pustr.c                                         :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ijaber <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 16:19:16 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/13 16:23:34 by ijaber           ###   ########.fr       */
+/*   Created: 2024/05/14 09:21:44 by ijaber            #+#    #+#             */
+/*   Updated: 2024/05/14 09:43:12 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void ft_putchar(char c)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-    write(1, &c, 1);
-}
+	int	i;
 
-void ft_putstr(char *str)
-{
-    int i;
-
-    i = 0;
-    while(str[i])
-        ft_putchar(str[i++]);
+	i = 0;
+	while (i < length)
+		f(tab[i++]);
 }
