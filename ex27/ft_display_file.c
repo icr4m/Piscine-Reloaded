@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_if.c                                      :+:      :+:    :+:   */
+/*   ft_display_file.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 09:21:49 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/15 16:07:20 by ijaber           ###   ########.fr       */
+/*   Created: 2024/05/15 13:36:02 by ijaber            #+#    #+#             */
+/*   Updated: 2024/05/15 17:15:05 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_count_if(char **tab, int (*f)(char *))
-{
-	int	i;
-	int	count;
+#include "display_file.h"
 
-	i = 0;
-	count = 0;
-	while (tab[i])
-	{
-		if (f(tab[i]) == 1)
-			count++;
-		i++;
-	}
-	return (count);
+int	ft_display_file(char *file_path)
+{
+	int		fd;
+	char	buffer[BUFFER_SIZE];
+
+	fd = open(file_path, O_RDONLY);
+	if (fd == -1)
+		return (fd);
+	while (read(fd, buffer, BUFFER_SIZE))
+		write(1, buffer, BUFFER_SIZE);
+	return (fd);
 }

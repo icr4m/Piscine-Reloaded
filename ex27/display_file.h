@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_if.c                                      :+:      :+:    :+:   */
+/*   display_file.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 09:21:49 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/15 16:07:20 by ijaber           ###   ########.fr       */
+/*   Created: 2024/05/15 13:49:18 by ijaber            #+#    #+#             */
+/*   Updated: 2024/05/15 15:56:04 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_count_if(char **tab, int (*f)(char *))
-{
-	int	i;
-	int	count;
+#ifndef DISPLAY_FILE_H
+# define DISPLAY_FILE_H
 
-	i = 0;
-	count = 0;
-	while (tab[i])
-	{
-		if (f(tab[i]) == 1)
-			count++;
-		i++;
-	}
-	return (count);
-}
+# include <fcntl.h>
+# include <unistd.h>
+
+# define BUFFER_SIZE 1
+
+# define ERROR_NAME "File name missing.\n"
+# define ERROR_READ "Cannot read file.\n"
+# define ERROR_ARGS "Too many arguments.\n"
+
+int		ft_display_file(char *file_path);
+void	ft_putstr_error(char *string_error);
+
+#endif
